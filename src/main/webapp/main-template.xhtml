@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<ui:insert name="metadata" />
+	<h:head>
+		<h:outputStylesheet library="css" name="styles.css" />
+	</h:head>
+	<h:body styleClass="main-body">
+		<div id="header">
+			<h1 style="margin-bottom: 0; float: left;">The JSF Pet Store</h1>
+			<h:form style="float: right;">
+				<h:commandLink action="#{sessionBean.logout}">
+					<h:graphicImage library="images" name="door.png"
+						styleClass="medium-icon" />
+				</h:commandLink>
+			</h:form>
+		</div>
+		<ul id="menu">
+			<li><h:link value="Home" outcome="/main" /></li>
+			<li><h:link value="Fishes" outcome="/galleries/fishes" /></li>
+			<li><h:link value="Monkeys" outcome="/galleries/monkeys" /></li>
+		</ul>
+
+		<div id="content">
+			<div id="content-pane">
+				<ui:insert name="content" />
+			</div>
+			<h:panelGroup id="order-panel"
+				rendered="#{not empty sessionBean.orders}">
+				<h2>Orders</h2>
+				<h:link outcome="/delivery/new-delivery">
+					<h:graphicImage library="images" name="van.png"
+						styleClass="medium-icon" />
+				</h:link>
+				<div id="orders">
+					<h:dataTable var="order" value="#{sessionBean.orders}"
+						id="box-table-a">
+						<h:column>
+							#{order.pet.category}
+						</h:column>
+						<h:column>
+							#{order.pet.species}
+						</h:column>
+						<h:column>
+							#{order.number}
+						</h:column>
+						<h:column>
+							<h:form>
+								<h:commandLink value="✕"
+									action="#{sessionBean.removeOrder(order)}" />
+							</h:form>
+						</h:column>
+					</h:dataTable>
+				</div>
+			</h:panelGroup>
+			<h:messages styleClass="faces-messages" />
+		</div>
+		<div id="footer">
+			<p>Mojarra JSF version: #{applicationBean.jsfVersion}</p>
+			<div>
+				Icon made by <a
+					href="http://www.flaticon.com/free-icon/door-exit-with-arrow-to-the-right_24069"
+					title="Icomoon">Icomoon</a> from <a href="www.flaticon.com"
+					title="Flaticon">www.flaticon.com</a>
+			</div>
+		</div>
+	</h:body>
+</f:view>
+</html>

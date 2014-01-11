@@ -1,0 +1,35 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:cc="http://java.sun.com/jsf/composite"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+<cc:interface>
+	<cc:attribute name="petCategory" />
+	<cc:attribute name="galleryTitle" />
+</cc:interface>
+
+<cc:implementation>
+<h2>#{cc.attrs.galleryTitle}</h2>
+	<table class="gallery">
+		<ui:repeat var="pet"
+			value="#{categoryListBean.listPets(cc.attrs.petCategory)}"
+			varStatus="loop">
+			<h:outputText value="&lt;tr&gt;"
+				rendered="#{not loop.first and loop.index % 2 == 0}" escape="false" />
+			<td>
+				<div>
+					<h3 class="cell-title">#{pet.species}</h3>
+				</div> <h:link outcome="/detail/pet-detail">
+					<h:graphicImage library="images" name="#{pet.imagePath}"
+						styleClass="gallery-image" />
+					<f:param name="species" value="#{pet.species}" />
+				</h:link>
+			</td>
+			<h:outputText value="&lt;tr/&gt;"
+				rendered="#{not loop.first and loop.index % 2 == 0}" escape="false" />
+		</ui:repeat>
+	</table>
+</cc:implementation>
+</html>

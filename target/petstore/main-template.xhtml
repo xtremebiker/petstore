@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core">
+<f:view>
+	<h:head>
+		<h:outputStylesheet library="css" name="styles.css" />
+	</h:head>
+	<h:body styleClass="main-body">
+		<div id="header" style="background-color: #FFA500;">
+			<h1 style="margin-bottom: 0;">The JSF Pet Store</h1>
+			<h:messages />
+		</div>
+		<div id="categories">
+			<h:link value="Home" outcome="main" />
+			<h:link value="Fishes" outcome="fishes" />
+			<h:link value="Monkeys" />
+		</div>
+		<ui:insert name="content" />
+		Orders
+		<!-- 		<div id="orders"> -->
+		<!-- 			<h:dataTable var="order" value="#{chartBean.orders}"> -->
+		<!-- 				<h:column> -->
+		<!-- 					#{order.pet.category} -->
+		<!-- 				</h:column> -->
+		<!-- 				<h:column> -->
+		<!-- 					#{order.pet.species} -->
+		<!-- 				</h:column> -->
+		<!-- 				<h:column> -->
+		<!-- 					#{order.number} -->
+		<!-- 				</h:column> -->
+		<!-- 			</h:dataTable> -->
+		<!-- 		</div> -->
+		<div id="footer">Mojarra JSF version:
+			#{applicationBean.jsfVersion}</div>
+	</h:body>
+</f:view>
+</html>

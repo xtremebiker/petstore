@@ -1,0 +1,27 @@
+<ui:composition template="main-template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+	<ui:define name="content">
+		Fishes
+		<ui:remove>
+			<h:panelGrid columns="3" styleClass="gallery">
+				<!-- 			<ui:repeat var="pet" value="#{categoryListBean.listPets('FISH')}"> -->
+				<!-- 				<div> -->
+				<!-- 					<h:panelGrid columns="1"> -->
+				<!-- 					#{pet.species} -->
+				<!-- 					<h:link outcome="pet-detail"> -->
+				<!-- 							<h:graphicImage library="images" name="#{pet.imagePath}" -->
+				<!-- 								styleClass="gallery-image" /> -->
+				<!-- 							<f:param name="species" value="#{pet.species}" /> -->
+				<!-- 						</h:link> -->
+				<!-- 					</h:panelGrid> -->
+				<!-- 				</div> -->
+				<!-- 			</ui:repeat> -->
+			</h:panelGrid>
+		</ui:remove>
+	</ui:define>
+</ui:composition>

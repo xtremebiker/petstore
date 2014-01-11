@@ -1,0 +1,31 @@
+.welcome-page-body {
+	background-color: green;
+}
+
+.main-body {
+	background-color: yellow;
+}
+
+.welcome-page-div {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	border: 1px solid black;
+	padding: 20px;
+	border-radius: 25px;
+	background: yellow;
+}
+
+.centered {
+	margin: 30%;
+}
+
+.gallery-image {
+	width: 100%;
+	max-height: 200px;
+	max-width: 200px;
+}
+
+.gallery {
+	border: 1px solid black;
+}

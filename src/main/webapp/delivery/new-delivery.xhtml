@@ -1,0 +1,30 @@
+<ui:composition template="/main-template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{deliveryBean.loadData}" type="preRenderView" />
+		</f:metadata>
+	</ui:define>
+	<ui:define name="content">
+		<h:form>
+			<h:inputText value="#{deliveryBean.name}" />
+			<h:inputText value="#{deliveryBean.email}" />
+			<h:inputText value="#{deliveryBean.phoneNumber}" />
+			<h:selectOneMenu value="#{deliveryBean.country}">
+				<f:selectItems value="#{deliveryBean.countries}" />
+				<f:ajax event="change" listener="#{deliveryBean.countryChanged}"
+					render="province-selection" />
+			</h:selectOneMenu>
+			<h:selectOneMenu value="#{deliveryBean.province}"
+				id="province-selection">
+				<f:selectItems value="#{deliveryBean.provinces}" />
+			</h:selectOneMenu>
+			<h:commandButton action="#{deliveryBean.deliverIt}" value="Send" />
+			<h:commandButton action="main" value="Cancel" immediate="true" />
+		</h:form>
+	</ui:define>
+</ui:composition>
