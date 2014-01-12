@@ -51,6 +51,7 @@ public class PetDetailBean implements Serializable {
 	}
 
 	public void loadData() {
+		// Load the pet object based into the species given
 		pet = Controller.petBySpecies(species);
 	}
 

@@ -8,23 +8,30 @@
 }
 
 #header {
-	background-color: #FFA500;
+	background-color: #9BA812;
 	height: 50px;
-	/* 	width: 100%; */
 	margin-left: 15%;
+	padding: 5px;
+}
+
+#header h1 {
+	margin: auto;
 }
 
 #content {
 	min-height: 60%;
 	padding: 10px;
 	margin-left: 20%;
+	margin-bottom: -150px;
 }
 
 #footer {
-	/* 	clear: both; */
 	margin-left: 15%;
-	/* 	margin-bottom: 0; */
-	position: fixed;
+	margin-top: 60%;
+	position: absolute;
+	height: 150px;
+	position: absolute;
+	float: left;
 }
 
 #order-panel {
@@ -40,18 +47,12 @@
 }
 
 .welcome-page-body {
-	background-color: green;
+	background-color: #9BA812;
 }
 
 #menu {
 	list-style-type: none;
-	/* 	margin: 0; */
-	/* 	padding: 0; */
-	/* 	float: left; */
-	/* 	width: 10%; */
-	/* 	min-width: 10%; */
-	/* 	background: #eee; */
-	background: green;
+	background: #C0E54D;
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -62,7 +63,8 @@
 #menu li {
 	margin-bottom: 0;
 	margin-right: 0.5em;
-	border: 1px solid #ddd;
+	padding: 20px;
+	/* 	border: 1px solid #ddd; */
 }
 
 #menu a {
@@ -71,8 +73,8 @@
 }
 
 .main-body {
-	background-color: yellow;
-	/* 	height: 100%; */
+	background-color: #ECE063;
+	/* 	height: 90%; */
 	/* 	width: 100%; */
 }
 
@@ -83,7 +85,7 @@
 	border: 1px solid black;
 	padding: 20px;
 	border-radius: 25px;
-	background: yellow;
+	background: #E7F758;
 }
 
 .info-div {
@@ -92,7 +94,7 @@
 	border: 1px solid black;
 	padding: 20px;
 	border-radius: 25px;
-	background: green;
+	background: #C7D21A;
 	width: 90%;
 }
 
@@ -125,7 +127,7 @@
 	font-size: 13px;
 	font-weight: normal;
 	padding: 8px;
-	background: #b9c9fe;
+	background: #C0E54D;
 	border-top: 4px solid #aabcfe;
 	border-bottom: 1px solid #fff;
 	color: #039;
@@ -133,14 +135,14 @@
 
 #box-table-a td {
 	padding: 8px;
-	background: #e8edff;
+	background: #C0E54D;
 	border-bottom: 1px solid #fff;
 	color: #669;
 	border-top: 1px solid transparent;
 }
 
 #box-table-a tr:hover td {
-	background: #d0dafd;
+	background: #9BA812;
 	color: #339;
 }
 

@@ -107,14 +107,11 @@ public class DeliveryBean implements Serializable {
 	}
 
 	public void loadData() {
-		// Check if the current request isn't an AJAX post request (which means
-		// the view is being reloaded). If not, just load the country stuff
-		if (!FacesContext.getCurrentInstance().isPostback()) {
-			provincesByCountry = Controller.getProvincesByCountry();
-			countries = new ArrayList<String>(provincesByCountry.keySet());
-			country = provincesByCountry.keySet().iterator().next();
-			provinces = provincesByCountry.get(country);
-		}
+		// Loads the country stuff
+		provincesByCountry = Controller.getProvincesByCountry();
+		countries = new ArrayList<String>(provincesByCountry.keySet());
+		country = provincesByCountry.keySet().iterator().next();
+		provinces = provincesByCountry.get(country);
 	}
 
 	public void setApplicationBean(ApplicationBean applicationBean) {

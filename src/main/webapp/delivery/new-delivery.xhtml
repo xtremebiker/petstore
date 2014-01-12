@@ -6,25 +6,45 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:event listener="#{deliveryBean.loadData}" type="preRenderView" />
+			<!-- JSF 2.2 alternative for f:event type="preRenderView". Avoids having to check if it's a postback at the server -->
+			<f:viewAction action="#{deliveryBean.loadData}" />
 		</f:metadata>
 	</ui:define>
 	<ui:define name="content">
-		<h:form>
-			<h:inputText value="#{deliveryBean.name}" />
-			<h:inputText value="#{deliveryBean.email}" />
-			<h:inputText value="#{deliveryBean.phoneNumber}" />
-			<h:selectOneMenu value="#{deliveryBean.country}">
-				<f:selectItems value="#{deliveryBean.countries}" />
-				<f:ajax event="change" listener="#{deliveryBean.countryChanged}"
-					render="province-selection" />
-			</h:selectOneMenu>
-			<h:selectOneMenu value="#{deliveryBean.province}"
-				id="province-selection">
-				<f:selectItems value="#{deliveryBean.provinces}" />
-			</h:selectOneMenu>
-			<h:commandButton action="#{deliveryBean.deliverIt}" value="Send" />
-			<h:commandButton action="main" value="Cancel" immediate="true" />
-		</h:form>
+		<div class="info-div">
+			<h:form>
+				<h:panelGrid columns="2">
+					<h5>Name</h5>
+					<h:inputText value="#{deliveryBean.name}" required="true">
+						<!-- Another JSF 2.2 feature, it allows passing HTML 5 custom attributes (placeholder in this case) -->
+						<f:passThroughAttribute name="placeholder"
+							value="Customer's name e.g. 'John Smith'" />
+					</h:inputText>
+					<h5>Email address</h5>
+					<h:inputText value="#{deliveryBean.email}" required="true">
+						<f:passThroughAttribute name="placeholder"
+							value="example@email.com" />
+					</h:inputText>
+					<h5>Phone number</h5>
+					<h:inputText value="#{deliveryBean.phoneNumber}" required="true">
+						<f:passThroughAttribute name="placeholder"
+							value="Only numbers are accepted" />
+					</h:inputText>
+					<h5>Country</h5>
+					<h:selectOneMenu value="#{deliveryBean.country}">
+						<f:selectItems value="#{deliveryBean.countries}" />
+						<f:ajax event="change" listener="#{deliveryBean.countryChanged}"
+							render="province-selection" />
+					</h:selectOneMenu>
+					<h5>Province</h5>
+					<h:selectOneMenu value="#{deliveryBean.province}"
+						id="province-selection">
+						<f:selectItems value="#{deliveryBean.provinces}" />
+					</h:selectOneMenu>
+					<h:commandButton action="#{deliveryBean.deliverIt}" value="Send" />
+					<h:commandButton action="/main" value="Cancel" immediate="true" />
+				</h:panelGrid>
+			</h:form>
+		</div>
 	</ui:define>
 </ui:composition>
