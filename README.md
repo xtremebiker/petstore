@@ -5,9 +5,9 @@ This project tries to cover the main functions of JSF 2 specification. Used fiel
 
 <ul>
 
-<li>Managed beans, in their different scopes (`@ApplicationScoped`, `@SessionScoped`, `@ViewScoped`, `@RequestScoped`)</li>
+<li>Managed beans, in their different scopes (@ApplicationScoped, @SessionScoped, @ViewScoped, @RequestScoped)</li>
 
-<li>Navigation from view-to-view in JSF. Using either GET requests and POST-REDIRECT-GET pattern</li>
+<li>Navigation from view-to-view in JSF</li>
 
 <li>The use of the EL language in its 2.2 version</li>
 
