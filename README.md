@@ -13,6 +13,8 @@ This project tries to cover the main functions of JSF 2 specification. Used fiel
 
 <li>A variety of JSF 2 components</li>
 
+<li>Composite components and templating</li>
+
 <li>Messaging in JSF</li>
 
 <li>Some new features of JSF 2.2 shown</li>
