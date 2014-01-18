@@ -21,12 +21,14 @@
 							value="Customer's name e.g. 'John Smith'" />
 					</h:inputText>
 					<h5>Email address</h5>
-					<h:inputText value="#{deliveryBean.email}" required="true">
+					<h:inputText value="#{deliveryBean.email}" required="true"
+						validator="emailValidator">
 						<f:passThroughAttribute name="placeholder"
 							value="example@email.com" />
 					</h:inputText>
 					<h5>Phone number</h5>
-					<h:inputText value="#{deliveryBean.phoneNumber}" required="true">
+					<h:inputText value="#{deliveryBean.phoneNumber}" required="true"
+						validator="phoneNumberValidator">
 						<f:passThroughAttribute name="placeholder"
 							value="Only numbers are accepted" />
 					</h:inputText>

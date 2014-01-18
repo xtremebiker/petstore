@@ -2,6 +2,6 @@ package org.petstore.model;
 
 public enum PetCategory {
 
-	FISH, MONKEY
+	FISH, MONKEY, PARROT, DOG
 
 }

@@ -55,6 +55,28 @@ public abstract class Controller {
 		petsByCategory.put(PetCategory.MONKEY,
 				Arrays.asList(bandar, squirrelMonkey, emperorTamarin));
 
+		// Create parrots
+		Pet blueYellowMacaw = new Pet(PetCategory.PARROT,
+				PetSpecies.BLUE_YELLOW_MACAW,
+				"Blue and yellow, like Swede flag!", "blue-yellow-macaw.jpg");
+		Pet sunConure = new Pet(PetCategory.PARROT, PetSpecies.SUN_CONURE,
+				"Beautiful orange parrot", "sun-conure.jpg");
+		petsBySpecies.put(PetSpecies.BLUE_YELLOW_MACAW, blueYellowMacaw);
+		petsBySpecies.put(PetSpecies.SUN_CONURE, sunConure);
+		petsByCategory.put(PetCategory.PARROT,
+				Arrays.asList(blueYellowMacaw, sunConure));
+
+		// Create dogs
+		Pet frenchBulldog = new Pet(PetCategory.DOG, PetSpecies.FRENCH_BULLDOG,
+				"I like playing with children!", "french-bulldog.jpg");
+		Pet englishBulldog = new Pet(PetCategory.DOG,
+				PetSpecies.ENGLISH_BULLDOG, "Ugly but funny dog ;-)",
+				"english-bulldog.jpg");
+		petsBySpecies.put(PetSpecies.FRENCH_BULLDOG, frenchBulldog);
+		petsBySpecies.put(PetSpecies.ENGLISH_BULLDOG, englishBulldog);
+		petsByCategory.put(PetCategory.DOG,
+				Arrays.asList(frenchBulldog, englishBulldog));
+
 		// Provinces by country
 		provincesByCountry.put("USA",
 				Arrays.asList("Arizona", "Nevada", "California"));

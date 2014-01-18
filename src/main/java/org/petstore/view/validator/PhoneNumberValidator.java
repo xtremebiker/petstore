@@ -7,24 +7,19 @@ import javax.faces.validator.FacesValidator;
 import javax.faces.validator.Validator;
 import javax.faces.validator.ValidatorException;
 
-/**
- * Checks the given value is a non-digit String
- * 
- * @author Aritz
- * 
- */
 @FacesValidator
-public class StringValidator implements Validator {
+public class PhoneNumberValidator implements Validator {
 
 	@Override
 	public void validate(FacesContext context, UIComponent component,
 			Object value) throws ValidatorException {
-		if (!value.toString().matches("\\D*")) {
+		if (!value.toString().matches("^[0-9]{5,10}$")) {
 			FacesMessage msg = new FacesMessage("Parameter validation failed.",
-					"The given parameter for the page title can't be considered as an string.");
+					"The entered field is not a valid phone number.");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
 			throw new ValidatorException(msg);
 		}
 
 	}
+
 }
