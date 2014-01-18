@@ -1,3 +1,4 @@
+<!-- Faces composite component which displays a pet gallery -->
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:cc="http://java.sun.com/jsf/composite"
@@ -5,17 +6,25 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions">
+
+<!-- In this interface we declare the required parameters for the composite -->
 <cc:interface>
-	<cc:attribute name="petCategory" />
 	<cc:attribute name="galleryTitle" />
 </cc:interface>
 
+<!-- Implementation for the composite component -->
 <cc:implementation>
-<h2>#{cc.attrs.galleryTitle}</h2>
+
+	<!-- Display the title given by the parameter -->
+	<h2>#{cc.attrs.galleryTitle}</h2>
+
+	<!-- Display the table for the pets. 
+	Note that a h:dataTable component could also have been used instead -->
 	<table class="gallery">
-		<ui:repeat var="pet"
-			value="#{categoryListBean.listPets(cc.attrs.petCategory)}"
+		<ui:repeat var="pet" value="#{categoryListBean.petList}"
 			varStatus="loop">
+
+			<!-- Displays the tr tag only for odd values -->
 			<h:outputText value="&lt;tr&gt;"
 				rendered="#{not loop.first and loop.index % 2 == 0}" escape="false" />
 			<td>

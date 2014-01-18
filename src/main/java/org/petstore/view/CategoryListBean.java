@@ -3,7 +3,7 @@ package org.petstore.view;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.view.ViewScoped;
 
 import org.petstore.controller.Controller;
 import org.petstore.model.Pet;
@@ -16,8 +16,24 @@ import org.petstore.model.PetCategory;
  * 
  */
 @ManagedBean
-@RequestScoped
+@ViewScoped
 public class CategoryListBean {
+
+	List<Pet> petList;
+
+	PetCategory category;
+
+	public PetCategory getCategory() {
+		return category;
+	}
+
+	public void setCategory(PetCategory category) {
+		this.category = category;
+	}
+
+	public List<Pet> getPetList() {
+		return petList;
+	}
 
 	/**
 	 * Loads the pet list for the given category from the controller
@@ -25,8 +41,8 @@ public class CategoryListBean {
 	 * @param cat
 	 * @return
 	 */
-	public List<Pet> listPets(PetCategory cat) {
-		return Controller.listPets(cat);
+	public void loadData() {
+		petList = Controller.listPets(category);
 	}
 
 }

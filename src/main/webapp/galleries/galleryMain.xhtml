@@ -1,0 +1,30 @@
+<!-- This view displays a pet gallery for the selected category. 
+The view is scalable, no matter how many categories you add you'll always be able to reuse it -->
+<ui:composition template="/main-template.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:comp="http://java.sun.com/jsf/composite/composite">
+	<!-- The f:metadata part is responsible of initializing the view. 
+	It catches the coming GET parameters and loads the gallery according to them -->
+	<f:metadata>
+
+		<!-- We'll let the title have only characters and no digits. This is checked by the validator -->
+		<!-- In a real system this title should be taken from the controller too -->
+		<f:viewParam name="title" value="#{title}" validator="stringValidator" />
+
+		<!-- A GET parameter that will match only for given categories -->
+		<f:viewParam name="category" value="#{categoryListBean.category}" />
+
+		<!-- JSF 2.2 alternative for f:event type="preRenderView". 
+		Loads the required data for the gallery to be displayed -->
+		<f:viewAction action="#{categoryListBean.loadData}" />
+
+	</f:metadata>
+	<!-- Overwrite the template default content with a comp:petGallery component with the given title -->
+	<ui:define name="content">
+		<comp:petGallery galleryTitle="#{title}" />
+	</ui:define>
+</ui:composition>

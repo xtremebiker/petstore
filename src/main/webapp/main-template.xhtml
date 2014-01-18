@@ -19,8 +19,14 @@
 		</div>
 		<ul id="menu">
 			<li><h:link value="Home" outcome="/main" /></li>
-			<li><h:link value="Fishes" outcome="/galleries/fishes" /></li>
-			<li><h:link value="Monkeys" outcome="/galleries/monkeys" /></li>
+			<li><h:link value="Fishes" outcome="/galleries/galleryMain">
+					<f:param name="title" value="Fishes" />
+					<f:param name="category" value="FISH" />
+				</h:link></li>
+			<li><h:link value="Monkeys" outcome="/galleries/galleryMain">
+					<f:param name="title" value="Monkeys" />
+					<f:param name="category" value="MONKEY" />
+				</h:link></li>
 		</ul>
 
 		<div id="content">
@@ -62,8 +68,8 @@
 			<div>
 				Icon made by <a
 					href="http://www.flaticon.com/free-icon/door-exit-with-arrow-to-the-right_24069"
-					title="Icomoon">Icomoon</a> from <a href="www.flaticon.com"
-					title="Flaticon">www.flaticon.com</a>
+					title="Icomoon" target="_blank">Icomoon</a> from <a
+					href="http://www.flaticon.com" target="_blank" title="Flaticon">www.flaticon.com</a>
 			</div>
 		</div>
 	</h:body>

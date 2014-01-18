@@ -43,8 +43,17 @@ public abstract class Controller {
 		// Create monkeys
 		Pet bandar = new Pet(PetCategory.MONKEY, PetSpecies.BANDAR,
 				"Nice small monkey", "bandar.jpg");
+		Pet squirrelMonkey = new Pet(PetCategory.MONKEY,
+				PetSpecies.SQUIRREL_MONKEY, "Looks like a squirrel, don't it?",
+				"squirrel-monkey.jpg");
+		Pet emperorTamarin = new Pet(PetCategory.MONKEY,
+				PetSpecies.EMPEROR_TAMARIN, "Great mustache!",
+				"emperor-tamarin.jpg");
 		petsBySpecies.put(PetSpecies.BANDAR, bandar);
-		petsByCategory.put(PetCategory.MONKEY, Arrays.asList(bandar));
+		petsBySpecies.put(PetSpecies.SQUIRREL_MONKEY, squirrelMonkey);
+		petsBySpecies.put(PetSpecies.EMPEROR_TAMARIN, emperorTamarin);
+		petsByCategory.put(PetCategory.MONKEY,
+				Arrays.asList(bandar, squirrelMonkey, emperorTamarin));
 
 		// Provinces by country
 		provincesByCountry.put("USA",
