@@ -17,6 +17,8 @@ This project tries to cover the main functions of JSF 2 specification. Used fiel
 
 <li>Messaging in JSF</li>
 
+<li>Faces Validators</li>
+
 <li>Some new features of JSF 2.2 shown</li>
 
 </ul>
