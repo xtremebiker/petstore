@@ -26,7 +26,7 @@
 
 	<!-- Avoids the xhtml comments being rendered at the DOM tree -->
 	<context-param>
-		<param-name>facelets.SKIP_COMMENTS</param-name>
+		<param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
 		<param-value>true</param-value>
 	</context-param>
 
