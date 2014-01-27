@@ -33,7 +33,7 @@ This project tries to cover the main functions of JSF 2 specification. Used fiel
 
 ========================================================
 
-Any bug notification - improvement would be considered by the author.
+Any bug notification - improvement would be considered by the author (aritzmaeztu@hotmail.com).
 
 Hope to be useful ;-)
 
