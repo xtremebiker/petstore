@@ -49,7 +49,24 @@
 }
 
 .welcome-page-body {
+	background: url(#{ resource [ 'images:intro.jpg' ]
+}
+
+);
+background-repeat
+:
+ 
+initial
+;
+
+
+}
+
+.welcome-page {
 	background-color: #9BA812;
+}
+
+*{
 	font-family: Garamond, Georgia, serif;
 }
 
@@ -67,7 +84,6 @@
 	margin-bottom: 0;
 	margin-right: 0.5em;
 	padding: 20px;
-	/* 	border: 1px solid #ddd; */
 }
 
 #menu a {
@@ -80,28 +96,44 @@
 	font-family: Garamond, Georgia, serif;
 }
 
-.welcome-page-div {
-	position: absolute;
-	top: 30%;
-	left: 30%;
-	border: 1px solid black;
-	padding: 20px;
-	border-radius: 25px;
-	background: #E7F758;
-}
-
-.info-div {
-	/* 	top: 30%; */
-	/* 	left: 30%; */
-	border: 1px solid black;
-	padding: 20px;
-	border-radius: 25px;
-	background: #C7D21A;
-	width: 90%;
+.panel-body {
+	font: 18pt bold;
+	width: 50%;
+	margin: auto;
 }
 
 .centered {
 	margin: 30%;
+}
+
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #F07575; /* fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-image: url(../images/select-arrow.png), -moz-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Fx (3.6 to 15) */
+    background-image: url(../images/select-arrow.png), -ms-linear-gradient(top, #E5E5E5, #F4F4F4); /* For pre-releases of IE 10*/
+    background-image: url(../images/select-arrow.png), -o-linear-gradient(top, #E5E5E5, #F4F4F4); /* For old Opera (11.1 to 12.0) */ 
+    background-image: url(../images/select-arrow.png), linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .gallery-image {
@@ -110,6 +142,11 @@
 	max-height: 200px;
 	max-width: 200px;
 	width: 100%;
+}
+
+.img-thumbnail{
+	max-width: 200px;
+	max-height: 200px;
 }
 
 .gallery {

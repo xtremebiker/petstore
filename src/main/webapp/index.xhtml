@@ -4,13 +4,18 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 	<h:outputStylesheet library="css" name="styles.css" />
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
 </h:head>
-<h:body styleClass="welcome-page-body">
-	<div class="welcome-page-div">
-		<h1>Welcome to the JSF pet store!</h1>
-		<p>Here you'll find world's most amazing animals, from Mojarra to
-			tropical parrots</p>
-		<h:link value="Go to the shop" outcome="main" styleClass="centered" />
+<h:body class="welcome-page-body">
+	<div class="jumbotron welcome-page" style="margin-top:30%;">
+		<div class="container">
+			<h1>Welcome to the JSF pet store!</h1>
+			<p>Here you'll find world's most amazing animals, from Mojarra to
+				tropical parrots</p>
+			<h:link value="Go to the shop" outcome="main"
+				styleClass="btn btn-primary btn-lg" />
+		</div>
 	</div>
 </h:body>
 </html>

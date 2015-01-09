@@ -18,27 +18,21 @@
 	<!-- Display the title given by the parameter -->
 	<h2>#{cc.attrs.galleryTitle}</h2>
 
-	<!-- Display the table for the pets. 
-	Note that a h:dataTable component could also have been used instead -->
-	<table class="gallery">
-		<ui:repeat var="pet" value="#{categoryListBean.petList}"
-			varStatus="loop">
+	<!-- Displays the table for the pets. -->
 
-			<!-- Displays the tr tag only for odd values -->
-			<h:outputText value="&lt;tr&gt;"
-				rendered="#{not loop.first and loop.index % 2 == 0}" escape="false" />
-			<td>
-				<div>
-					<h3 class="cell-title">#{pet.species}</h3>
-				</div> <h:link outcome="/detail/pet-detail">
-					<h:graphicImage library="images" name="#{pet.imagePath}"
-						styleClass="gallery-image" />
-					<f:param name="species" value="#{pet.species}" />
-				</h:link>
-			</td>
-			<h:outputText value="&lt;tr/&gt;"
-				rendered="#{not loop.first and loop.index % 2 == 0}" escape="false" />
-		</ui:repeat>
-	</table>
+	<h:dataTable var="pet" value="#{categoryListBean.petList}"
+		styleClass="table table-striped table-condensed">
+		<h:column>
+			#{pet.species}
+		</h:column>
+		<h:column>
+			<h:link outcome="/detail/pet-detail">
+				<h:graphicImage library="images" name="#{pet.imagePath}"
+					class="img-thumbnail" />
+				<f:param name="species" value="#{pet.species}" />
+			</h:link>
+		</h:column>
+	</h:dataTable>
+
 </cc:implementation>
 </html>

@@ -11,7 +11,7 @@
 		</f:metadata>
 	</ui:define>
 	<ui:define name="content">
-		<div class="info-div">
+		<div>
 			<h:form>
 				<h:panelGrid columns="2">
 					<h5>Name</h5>
@@ -43,8 +43,10 @@
 						id="province-selection">
 						<f:selectItems value="#{deliveryBean.provinces}" />
 					</h:selectOneMenu>
-					<h:commandButton action="#{deliveryBean.deliverIt}" value="Send" />
-					<h:commandButton action="/main" value="Cancel" immediate="true" />
+					<h:commandButton action="#{deliveryBean.deliverIt}" value="Send"
+						styleClass="btn btn-default" />
+					<h:commandButton action="/main" value="Cancel" immediate="true"
+						styleClass="btn btn-default" />
 				</h:panelGrid>
 			</h:form>
 		</div>

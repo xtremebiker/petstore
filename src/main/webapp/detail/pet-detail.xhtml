@@ -12,20 +12,20 @@
 		</f:metadata>
 	</ui:define>
 	<ui:define name="content">
-		<div class="info-div">
-			<h:panelGrid style="margin:auto;">
-				<ui:param name="pet" value="#{petDetailBean.pet}" />
-				<h:form>
-					<h:selectOneMenu value="#{petDetailBean.orderNum}">
-						<f:selectItems value="#{petDetailBean.orderNums}" />
-					</h:selectOneMenu>
-					<h:commandButton value="Add to the cart"
-						action="#{petDetailBean.makeAnOrder}" />
-				</h:form>
-				<h2>#{pet.species}</h2>
-				<h:graphicImage library="images" name="#{pet.imagePath}" />
-				<p style="margin: auto; padding: 5px;">♣#{pet.description}</p>
-			</h:panelGrid>
+		<div class="panel">
+			<ui:param name="pet" value="#{petDetailBean.pet}" />
+			<div class="panel-heading">
+				<h3>#{pet.species}</h3>
+			</div>
+			<h:form>
+				<h:selectOneMenu value="#{petDetailBean.orderNum}">
+					<f:selectItems value="#{petDetailBean.orderNums}" />
+				</h:selectOneMenu>
+				<h:commandButton value="Add to the cart"
+					action="#{petDetailBean.makeAnOrder}" styleClass="btn btn-default" />
+			</h:form>
+			<h:graphicImage library="images" name="#{pet.imagePath}" />
+			<p style="margin: auto; padding: 5px;">♣#{pet.description}</p>
 		</div>
 	</ui:define>
 </ui:composition>
