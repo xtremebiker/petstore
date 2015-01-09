@@ -52,6 +52,7 @@
 				<ui:insert name="content" />
 			</div>
 
+			<!-- Current orders panel (render it if there are some orders) -->
 			<h:panelGroup rendered="#{not empty sessionBean.orders}">
 				<h2>Orders</h2>
 				<h:link outcome="/delivery/new-delivery">
